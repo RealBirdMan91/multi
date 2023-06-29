@@ -2,26 +2,656 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  /* FONT IMPORTS */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  /* poppins-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/fonts/poppins-v20-latin-regular.eot"); /* IE9 Compat Modes */
+    src: url("../public/fonts/poppins-v20-latin-regular.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../public/fonts/poppins-v20-latin-regular.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../public/fonts/poppins-v20-latin-regular.woff") format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../public/fonts/poppins-v20-latin-regular.ttf") format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../public/fonts/poppins-v20-latin-regular.svg#Poppins")
+        format("svg"); /* Legacy iOS */
+  }
+  /* poppins-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public/fonts/poppins-v20-latin-500.eot"); /* IE9 Compat Modes */
+    src: url("../public/fonts/poppins-v20-latin-500.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../public/fonts/poppins-v20-latin-500.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../public/fonts/poppins-v20-latin-500.woff") format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../public/fonts/poppins-v20-latin-500.ttf") format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../public/fonts/poppins-v20-latin-500.svg#Poppins") format("svg"); /* Legacy iOS */
+  }
+  /* poppins-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public/fonts/poppins-v20-latin-600.eot"); /* IE9 Compat Modes */
+    src: url("../public/fonts/poppins-v20-latin-600.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../public/fonts/poppins-v20-latin-600.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../public/fonts/poppins-v20-latin-600.woff") format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../public/fonts/poppins-v20-latin-600.ttf") format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../public/fonts/poppins-v20-latin-600.svg#Poppins") format("svg"); /* Legacy iOS */
+  }
+  /* poppins-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../public/fonts/poppins-v20-latin-700.eot"); /* IE9 Compat Modes */
+    src: url("../public/fonts/poppins-v20-latin-700.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../public/fonts/poppins-v20-latin-700.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../public/fonts/poppins-v20-latin-700.woff") format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../public/fonts/poppins-v20-latin-700.ttf") format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../public/fonts/poppins-v20-latin-700.svg#Poppins") format("svg"); /* Legacy iOS */
+  }
+  /* poppins-800 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../public/fonts/poppins-v20-latin-800.eot"); /* IE9 Compat Modes */
+    src: url("../public/fonts/poppins-v20-latin-800.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../public/fonts/poppins-v20-latin-800.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../public/fonts/poppins-v20-latin-800.woff") format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../public/fonts/poppins-v20-latin-800.ttf") format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../public/fonts/poppins-v20-latin-800.svg#Poppins") format("svg"); /* Legacy iOS */
+  }
+  /* poppins-900 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../public/fonts/poppins-v20-latin-900.eot"); /* IE9 Compat Modes */
+    src: url("../public/fonts/poppins-v20-latin-900.eot?#iefix")
+        format("embedded-opentype"),
+      /* IE6-IE8 */ url("../public/fonts/poppins-v20-latin-900.woff2")
+        format("woff2"),
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url("../public/fonts/poppins-v20-latin-900.woff") format("woff"),
+      /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+        url("../public/fonts/poppins-v20-latin-900.ttf") format("truetype"),
+      /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+        url("../public/fonts/poppins-v20-latin-900.svg#Poppins") format("svg"); /* Legacy iOS */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  /* body {
+        @apply m-12 p-4 ...
+    }; */
+  .page {
+    padding-top: 2.5rem;
+    padding-left: 2rem;
+    padding-bottom: 1.25rem;
+    padding-right: 2rem;
+  }
+  .title-black {
+    font-family: "Poppins";
+    font-weight: 900;
+    font-size: 28px;
+    color: black;
+  }
+  .title-bold {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 28px;
+    color: black;
+  }
+  .landing-quote {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 24px;
+    color: black;
+  }
+  .body {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+  }
+  .body-semibold {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+  }
+  .body-semibold-disabled {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 16px;
+    color: #acacac;
+  }
+  .body-accent {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+    color: #fa9a5d;
+  }
+  .body-light {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 16px;
+    color: #acacac;
+  }
+  .button {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+  }
+  .button-small {
+    font-family: "Poppins";
+    font-weight: 800;
+    font-size: 12px;
+    color: black;
+  }
+  .description {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+  }
+  .small {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 10px;
+    color: black;
+  }
+  .small-bold {
+    font-family: "Poppins";
+    font-weight: 800;
+    font-size: 10px;
+    color: black;
+  }
+  .special-accent {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 12px;
+    color: #fa9a5d;
+  }
+  .emotionGradient {
+    background-image: linear-gradient(
+      to right,
+      #fa1911,
+      #fa9a5d,
+      #febf10,
+      #79cb65,
+      #4d9979
+    );
+  }
+  /* ======================== */
+  /* TIME PICKER */
+  /* ======================== */
+  .timePicker .react-time-picker__wrapper {
+    width: fit-content;
+    @apply border-brutal shadow-brutal flex gap-1 p-2 body-semibold bg-yellow;
+  }
+  .timePicker .react-time-picker__inputGroup {
+    width: fit-content;
+    @apply flex gap-[2px];
+  }
+  .timePicker .react-time-picker__inputGroup__input {
+    border-color: white;
+  }
+  .timePicker * {
+    @apply bg-yellow;
+  }
+  /* ======================== */
+  /* CALENDAR */
+  /* ======================== */
+  .react-calendar {
+    max-width: 100%;
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 1);
+    border: 3px solid #000000;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    @apply shadow-brutal px-4 py-2 bg-yellow;
+  }
+  .calendar .react-calendar__year-view__months__month {
+    text-transform: uppercase;
+  }
+
+  .calendar .react-calendar--doubleView {
+    width: 700px;
+  }
+
+  .calendar .react-calendar--doubleView .react-calendar__viewContainer {
+    display: flex;
+  }
+
+  .calendar .react-calendar--doubleView .react-calendar__viewContainer > * {
+    width: 50%;
+    margin: 0.5em;
+  }
+
+  .calendar .react-calendar,
+  .calendar .react-calendar *,
+  .calendar .react-calendar *:before,
+  .calendar .react-calendar *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .calendar .react-calendar button {
+    margin: 0;
+    outline: none;
+  }
+
+  .calendar .react-calendar button:enabled:hover {
+    cursor: pointer;
+  }
+
+  .calendar .react-calendar__navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 1em;
+    gap: 16px;
+  }
+
+  .calendar .react-calendar__navigation button {
+    min-width: 44px;
+    border: 3px black solid;
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 1);
+  }
+  .calendar .react-calendar__navigation__next-button,
+  .calendar .react-calendar__navigation__prev-button {
+    background-color: #038b91;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .calendar .react-calendar__year-view__months,
+  .calendar .react-calendar__month-view {
+    min-height: 187px;
+  }
+
+  .calendar .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 4px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .calendar .react-calendar__month-view__weekNumbers .react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendar .react-calendar__month-view__days__day--neighboringMonth {
+    color: #038b91;
+  }
+
+  .calendar .react-calendar__tile {
+    background: none;
+    text-align: center;
+    box-sizing: border-box;
+    border: 3px transparent solid;
+  }
+
+  .calendar .react-calendar__tile:disabled {
+    color: #fa9a5d;
+  }
+
+  .calendar .react-calendar__tile:enabled:hover,
+  .calendar .react-calendar__tile:enabled:focus,
+  .calendar .react-calendar__tile--range {
+    border: 3px solid #000000;
+  }
+
+  .calendar .react-calendar__tile--now {
+    border: 3px #ffedbc solid;
+  }
+
+  .calendar .react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #e6e6e6;
+  }
+
+  .calendar .react-calendar__navigation__label__labelText {
+    text-transform: uppercase;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+@layer utilities {
+  .border-brutal {
+    border: 3px solid #000000;
+  }
+  .border-brutal-disabled {
+    border: 3px solid #acacac;
+  }
+  .shadow-brutal {
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 1);
+  }
+
+  .landing-logo {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 98px;
+    text-align: center;
+
+    color: #febf10;
+
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+      2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000000,
+      -4px 4px 0px #264653, -6px 6px 0px #2a9d8f, -8px 8px 0px #e9c46a,
+      -10px 10px 0px #e76f51;
+  }
+  /* scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    width: 15px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 4px;
+    border: black 3px solid;
+    background: #fa9a5d;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    border: 3px solid black;
+    @apply bg-green-light;
+  }
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #3d6732;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  .scrollbar--alt-color::-webkit-scrollbar-track {
+    @apply bg-yellow;
+  }
+  .appName {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 98px;
+    text-align: center;
+
+    color: #febf10;
+
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+      2px 2px #000000, -2px -2px #000000, 2px -2px #000000, -2px 2px #000000,
+      -4px 4px 0px #000000;
+  }
+  .toast-container {
+    --toastify-color-light: #ffedbc;
+    --toastify-color-dark: #2f9ca1;
+    --toastify-color-info: #038b91;
+    --toastify-color-success: #79cb65;
+    --toastify-color-warning: #febf10;
+    --toastify-color-error: #fa1911;
+    --toastify-color-transparent: rgba(255, 255, 255, 1);
+
+    --toastify-icon-color-info: var(--toastify-color-info);
+    --toastify-icon-color-success: var(--toastify-color-success);
+    --toastify-icon-color-warning: var(--toastify-color-warning);
+    --toastify-icon-color-error: var(--toastify-color-error);
+
+    --toastify-toast-width: 320px;
+    --toastify-toast-background: #febf10;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-font-family: "Poppins";
+    --toastify-z-index: 9999;
+
+    --toastify-text-color-light: #000000;
+    --toastify-text-color-dark: #fff;
+  }
+
+  #valuesConesnusController {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 230px;
+  }
+
+  option {
+    padding: 8px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+  }
+
+  /* ======================== */
+  /* Censensus Controller CSS */
+  /* ======================== */
+  #rangeValue {
+    margin-left: 4px;
+    -webkit-appearance: none;
+    width: 230px;
+    height: 40px;
+    margin-right: 10px;
+    background: white;
+    border-radius: 4px;
+    border: 3px solid #000000;
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 1);
+    background-image: linear-gradient(#febf10, #febf10);
+    background-size: 80% 100%;
+    background-repeat: no-repeat;
+  }
+
+  /* Input Thumb */
+  #rangeValue::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 4px;
+    background: black;
+    cursor: ew-resize;
+    transition: background 0.3s ease-in-out;
+  }
+
+  /* Input Track */
+  #rangeValue::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  #outputValue {
+    display: inline-block;
+    vertical-align: middle;
+    background: #febf10;
+    width: 53px;
+    height: 40px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 3px;
+    border: 3px solid #000000;
+    color: black;
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 1);
+    padding: 4px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+  }
+
+  /* ======================== */
+  /* Poll Progression Bar CSS */
+  /* ======================== */
+
+  #valuesPollProgression {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 200px;
+  }
+
+  #rangeValuePollProgression {
+    margin-left: 4px;
+    -webkit-appearance: none;
+    width: 200px;
+    height: 40px;
+    margin-right: 10px;
+    background: white;
+    border-radius: 4px;
+    border: 3px solid #000000;
+    background-image: linear-gradient(#79cb65, #79cb65);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+  }
+
+  /* Input Thumb */
+  #rangeValuePollProgression::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 4px;
+    background: black;
+  }
+
+  /* Input Track */
+  #rangeValuePollPogression::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  #outputValuePollProgression {
+    display: inline-block;
+    vertical-align: middle;
+    background: #79cb65;
+    width: 53px;
+    height: 40px;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    line-height: 34px;
+    border-radius: 3px;
+    border: 3px solid #000000;
+    color: black;
+  }
+  .toast-container {
+    --toastify-color-light: #ffedbc;
+    --toastify-color-dark: #2f9ca1;
+    --toastify-color-info: #038b91;
+    --toastify-color-success: #79cb65;
+    --toastify-color-warning: #febf10;
+    --toastify-color-error: #fa1911;
+    --toastify-color-transparent: rgba(255, 255, 255, 1);
+
+    --toastify-icon-color-info: var(--toastify-color-info);
+    --toastify-icon-color-success: var(--toastify-color-success);
+    --toastify-icon-color-warning: var(--toastify-color-warning);
+    --toastify-icon-color-error: var(--toastify-color-error);
+
+    --toastify-toast-width: 320px;
+    --toastify-toast-background: #febf10;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-font-family: "Poppins";
+    --toastify-z-index: 9999;
+
+    --toastify-text-color-light: #000000;
+    --toastify-text-color-dark: #fff;
+  }
+
+  /* ======================== */
+  /* Poll Radio Button CSS */
+  /* ======================== */
+  .radio-label {
+    color: #303030;
+    cursor: pointer;
+  }
+
+  .radio-input {
+    margin: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .radio-input:checked + span {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+    transform: translate(-0.25rem, 0.25rem);
+  }
+
+  .radio-input:checked + span:after {
+    opacity: 1;
+  }
+
+  .custom-radio {
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background: #fa9a5d;
+    border: 3px solid #000000;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    box-shadow: -4px 4px 0px rgba(0, 0, 0, 1);
+  }
+
+  /* for inner filled circle */
+  .custom-radio::after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: #febf10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    border-radius: 4px;
+    border: 3px solid #000000;
+  }
 }

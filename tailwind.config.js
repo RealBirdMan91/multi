@@ -1,18 +1,53 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./stories/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        teal: {
+          DEFAULT: "#038B91",
+          light: "#2F9CA1",
+        },
+        green: {
+          DEFAULT: "#4D9979",
+          light: "#79CB65",
+        },
+        peach: {
+          DEFAULT: "#FA9A5D",
+          light: "#FFB47D",
+        },
+        yellow: {
+          DEFAULT: "#FEBF10",
+          light: "#FFEDBC",
+        },
+        grey: "#BCBCBC",
+        red: "#FA1911",
+      },
+      boxShadow: {
+        shadow: "-4px 4px rgba(0, 0, 0, 0.9)",
+      },
+      borderRadius: {
+        round: "4px",
+      },
+      width: {
+        8.5: "31px",
+        25: "6.25rem",
+        18: "4.5rem",
+      },
+      height: {
+        8.5: "31px",
+        15: "3.75rem",
+        18: "4.5rem",
+      },
+      borderWidth: {
+        3: "3px",
       },
     },
+    plugins: [],
   },
-  plugins: [],
-}
+};
